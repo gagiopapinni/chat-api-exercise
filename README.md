@@ -62,9 +62,9 @@ _example "chats":_
 ```
 ### Api Overview
 
-* "/users/add"
-   Registers a new user and returns his id.
-   Examples:
+* "/users/add"  
+   Registers a new user and returns his id.  
+   Examples:  
    ```
    $ curl --header "Content-Type: application/json" \
           --request POST \
@@ -82,11 +82,11 @@ _example "chats":_
    {"error":{"status":400,"message":"missing argument"}}  
    ```
 * "/chats/add"  
-   Registers a new chat and return it's id.
-   One or more users must be defined in "users" argument  
-   as an array of ids.
-   Chat's name must be defined in "name" argument.
-   Examples:
+   Registers a new chat and return it's id.  
+   One or more users must be defined in "users" argument    
+   as an array of ids.  
+   Chat's name must be defined in "name" argument.  
+   Examples:  
    ```
    $ curl --header "Content-Type: application/json" \
           --request POST \
@@ -103,12 +103,12 @@ _example "chats":_
           
    {"error":{"status":400,"message":"name length exceeded"}}
    ```
-* "/messages/add"  
-   Adds a new message to a specified chat.
-   An author id must be defined in "author" argument,
-   chat id in "chat", and message text in "text".
-   There is a 1000 character limit for text length.
-   Examples:
+* "/messages/add"    
+   Adds a new message to a specified chat.  
+   An author id must be defined in "author" argument,  
+   chat id in "chat", and message text in "text".  
+   There is a 1000 character limit for text length.  
+   Examples:  
    ```
    $ curl --header "Content-Type: application/json" \
           --request POST \
@@ -130,6 +130,43 @@ _example "chats":_
    {"error":{"status":400,"message":"author is not a member of this chat"}}
    ```
 * "/chats/get"
-  Returns all the chats of a specified user.
-  
-
+   Returns all chats of a specified user.
+   ```
+   $ curl --header "Content-Type: application/json" \
+          --request POST \
+          --data '{"user": "5f19bf498db07629cc66cee6"}' \
+          http://localhost:9000/chats/get
+         
+   [{
+      "name":"Lonely",
+      "users":["5f19bf498db07629cc66cee6"],
+      "created_at":1595523618,
+      "id":"5f19c2228db07629cc66cee7"
+   }]
+   ```
+   ```
+   $ curl --header "Content-Type: application/json" \
+          --request POST \
+          --data '{"user":123}' \
+          http://localhost:9000/chats/get
+         
+   {"error":{"status":400,"message":"bad argument type"}}
+   ```
+   
+* "/messages/get"  
+   Returns all messages in a specified chat.  
+   ```
+   $ curl --header "Content-Type: application/json" \
+          --request POST \
+          --data '{"chat": "5f19c2228db07629cc66cee7"}' \
+          http://localhost:9000/messages/get
+          
+   [{
+      "author":"5f19bf498db07629cc66cee6",
+      "text":"Once upon a time...",
+      "created_at":1595524404,
+      "chat":"5f19c2228db07629cc66cee7",
+      "id":"5f19c5348db07629cc66cee8"
+   }}
+   ```
+ 
