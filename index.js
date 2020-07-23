@@ -267,7 +267,7 @@ app.use(function (err,req,res,next){
 });
 
 app.use(function (req,res,next){
-    res.status(404).send({error:{ text:"not found"}});
+    res.status(404).send({error:{ status:404, message:"not found"}});
 });
 
 ;(async function(){
@@ -282,13 +282,4 @@ app.use(function (req,res,next){
   }
  
 }())
-
-
-
-
-
-
-
-
-
 
