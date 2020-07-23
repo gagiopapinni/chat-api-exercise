@@ -105,7 +105,7 @@ Example "chats":
           
    {"error":{"status":400,"message":"name length exceeded"}}
    ```
-* "/messages/add"    
+* "/messages/add"      
    Adds a new message to a specified chat.  
    An author id must be defined in "author" argument,  
    chat id in "chat", and message text in "text".  
@@ -131,7 +131,7 @@ Example "chats":
           
    {"error":{"status":400,"message":"author is not a member of this chat"}}
    ```
-* "/chats/get"
+* "/chats/get"  
    Returns all chats of a specified user.
    ```
    $ curl --header "Content-Type: application/json" \
@@ -155,7 +155,7 @@ Example "chats":
    {"error":{"status":400,"message":"bad argument type"}}
    ```
    
-* "/messages/get"  
+* "/messages/get"    
    Returns all messages in a specified chat.  
    ```
    $ curl --header "Content-Type: application/json" \
