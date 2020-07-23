@@ -85,8 +85,7 @@ Example "chats":
    ```
 * "/chats/add"  
    Registers a new chat and returns it's id.  
-   One or more users must be defined in "users" argument    
-   as an array of ids.  
+   One or more users must be defined in "users" argument as an array of ids.  
    Chat's name must be defined in "name" argument.  
    Examples:  
    ```
@@ -107,8 +106,7 @@ Example "chats":
    ```
 * "/messages/add"      
    Adds a new message to a specified chat.  
-   An author id must be defined in "author" argument,  
-   chat id in "chat", and message text in "text".  
+   An author id must be defined in "author" argument, chat id in "chat", and message text in "text".  
    There is a 1000 character limit for text length.  
    Examples:  
    ```
