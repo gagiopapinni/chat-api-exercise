@@ -167,6 +167,6 @@ _example "chats":_
       "created_at":1595524404,
       "chat":"5f19c2228db07629cc66cee7",
       "id":"5f19c5348db07629cc66cee8"
-   }}
+   }]
    ```
  
