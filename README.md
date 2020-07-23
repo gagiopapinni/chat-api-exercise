@@ -1,28 +1,29 @@
 # chat-api-exercise
-### How To Run
+## How To Run
 
-A .env file with following content is needed to run the server:  
+An .env file with following content is needed to run the server:  
 ```
 PORT=9000  
 MONGOHQ_URL="<URL>"   
 DB_NAME="<DB>"
   ```
 Where \<URL\> is a string, containing a MongoDb URL,  
-and \<DB\> - a string, containing the name of your database
+and \<DB\> - a string, containing a database name.
 
-Once .env is created, open terminal and run the following, to start the server:
+Once .env is created, open terminal and run the following:
 ```
 $ npm install  
 $ node index.js
 ```
-Once the server is up, the following line will appear:
+Once the server is up, this will appear:
 ```
 Running on port 9000
 ```
-### Database Structure
+
+## Database Structure
 
 The database consists of two collections, namely "users" and "chats".  
-_example "users":_
+Example "users":
 ```
 [{
    "_id":ObjectId("5f1972acb2e5a91a01d75158"),
@@ -35,7 +36,7 @@ _example "users":_
    "created_at":1595503314
 }]
 ```
-_example "chats":_
+Example "chats":
 ```
 [{
    "_id":ObjectId(5f1973d9b2e5a91a01d7515a"),
@@ -60,7 +61,8 @@ _example "chats":_
    "last_message_time":1595505452
 }]
 ```
-### Api Overview
+
+## Api Overview
 
 * "/users/add"  
    Registers a new user and returns his id.  
@@ -82,7 +84,7 @@ _example "chats":_
    {"error":{"status":400,"message":"missing argument"}}  
    ```
 * "/chats/add"  
-   Registers a new chat and return it's id.  
+   Registers a new chat and returns it's id.  
    One or more users must be defined in "users" argument    
    as an array of ids.  
    Chat's name must be defined in "name" argument.  
