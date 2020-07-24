@@ -7,8 +7,7 @@ PORT=9000
 MONGOHQ_URL="<URL>"   
 DB_NAME="<DB>"
   ```
-Where \<URL\> is a string, containing a MongoDb URL,  
-and \<DB\> - a string, containing a database name.
+Where \<URL\> is a MongoDb URL, and \<DB\> - a database name.
 
 Once .env is created, open terminal and run the following:
 ```
